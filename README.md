@@ -1,2 +1,1 @@
-1. npm install
-2. npm run dev
+mock servers in this [repository](https://github.com/mikhama/async-race-api)
