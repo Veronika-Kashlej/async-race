@@ -1,0 +1,130 @@
+/* Анимация при сортировке */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.winner-row {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Плавное изменение цвета при наведении */
+.th, .td, .pagination-btn {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Основные стили таблицы */
+.winners-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили заголовков */
+.th {
+    padding: 12px 15px;
+    text-align: left;
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.th.sortable:hover {
+    cursor: pointer;
+    background-color: #34495e;
+}
+
+/* Стили ячеек */
+.td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+
+/* Чередование цвета строк */
+.winner-row:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.winner-row:hover {
+    background-color: #f1f1f1;
+}
+
+.sort-icon {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* Стили для иконок сортировки */
+.sort-icon {
+    margin-left: 5px;
+    display: inline-block;
+    width: 15px;
+    color: #ecf0f1;
+}
+
+/* Стили для активной сортировки */
+.th.active-sort .sort-icon {
+    color: #f39c12;
+}
+
+/* Стили для изображений машин */
+.td svg {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.pagination-btn {
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+
+.pagination-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.page-info {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .winners-table {
+        font-size: 14px;
+    }
+
+    .th, .td {
+        padding: 8px 10px;
+    }
+}
